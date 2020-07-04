@@ -6,4 +6,5 @@
 
     <color name="AppBackground">#795548</color>
     <color name="AppTitleText">#D3CCCA</color>
+    <color name="buttonText">#FFFFFF</color>
 </resources>
