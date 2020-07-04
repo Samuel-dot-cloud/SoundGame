@@ -3,4 +3,25 @@
     <string name="category1">Drinks</string>
     <string name="category2">Foods</string>
     <string name="category3">Fruits</string>
+
+    <string name="drink1">Peach Juice</string>
+    <string name="drink2">Mango Juice</string>
+    <string name="drink3">Green Lemon Juice</string>
+    <string name="drink4"></string>
+    <string name="drink5"></string>
+    <string name="drink6"></string>
+    <string name="drink7"></string>
+    <string name="drink8"></string>
+    <string name="drink9"></string>
+    <string name="go_back_button">Go back button</string>
+
+    <string name="food1"></string>
+    <string name="food2"></string>
+    <string name="food3"></string>
+    <string name="food4"></string>
+    <string name="food5"></string>
+    <string name="food6"></string>
+    <string name="food7"></string>
+    <string name="food8"></string>
+    <string name="food9"></string>
 </resources>
