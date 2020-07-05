@@ -2,6 +2,7 @@ package com.studiofive.soundgame;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
 
 public class MainActivity extends Activity {
 
@@ -26,5 +27,17 @@ public class MainActivity extends Activity {
 
     private void showFruitsPage(){
         setContentView(R.layout.fruits);
+    }
+
+    public void clickButton(View view){
+        if (view.getId() == R.id.drinksBtn){
+            showDrinksPage();
+        } else if (view.getId() == R.id.foodsBtn){
+            showFoodsPage();
+        }else if (view.getId() == R.id.fruitsBtn){
+            showFruitsPage();
+        }else if (view.getId() == R.id.goBack){
+            showMainScreen();
+        }
     }
 }
