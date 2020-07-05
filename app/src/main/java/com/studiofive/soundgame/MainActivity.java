@@ -7,6 +7,8 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Toast;
 
+import es.dmoral.toasty.Toasty;
+
 public class MainActivity extends Activity {
     public static Integer goBackCounter = 0;
     public Context mContext;
@@ -95,7 +97,7 @@ public class MainActivity extends Activity {
     public void onBackPressed() {
         if (goBackCounter == 2) {
             if (!((Activity) mContext).isFinishing()) {
-                Toast.makeText(mContext, getResources().getString(R.string.exit), Toast.LENGTH_SHORT).show();
+                Toasty.success(mContext,  getResources().getString(R.string.exit), Toast.LENGTH_SHORT, true).show();
             }
         }
     }
