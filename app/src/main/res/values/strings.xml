@@ -34,4 +34,6 @@
     <string name="fruit7"></string>
     <string name="fruit8"></string>
     <string name="fruit9"></string>
+
+    <string name="exit">Thank you for visiting.</string>
 </resources>
