@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/AppBackground"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/category3"
+        android:textStyle="bold|italic"
+        android:gravity="center"
+        android:textColor="@color/AppTitleText"
+        android:padding="5dp"
+        android:layout_margin="5dp"
+        android:textSize="36sp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_height="match_parent">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_height="match_parent" >
+
+                    <ImageView
+                        android:id="@+id/fruit1"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/border_image"
+                        android:padding="3dp"
+                        android:onClick="clickButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/fruit1"
+                        android:contentDescription="@string/fruit1" />
+
+                    <ImageView
+                        android:id="@+id/fruit2"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/border_image"
+                        android:padding="3dp"
+                        android:onClick="clickButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/fruit2"
+                        android:contentDescription="@string/fruit2" />
+
+                    <ImageView
+                        android:id="@+id/fruit3"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/border_image"
+                        android:padding="3dp"
+                        android:onClick="clickButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/fruit3"
+                        android:contentDescription="@string/fruit3" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_height="match_parent" >
+
+                    <ImageView
+                        android:id="@+id/fruit4"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/border_image"
+                        android:padding="3dp"
+                        android:onClick="clickButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/fruit4"
+                        android:contentDescription="@string/fruit4" />
+
+                    <ImageView
+                        android:id="@+id/fruit5"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/border_image"
+                        android:padding="3dp"
+                        android:onClick="clickButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/fruit5"
+                        android:contentDescription="@string/fruit5" />
+
+                    <ImageView
+                        android:id="@+id/fruit6"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/border_image"
+                        android:padding="3dp"
+                        android:onClick="clickButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/fruit6"
+                        android:contentDescription="@string/fruit6" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_height="match_parent" >
+
+                    <ImageView
+                        android:id="@+id/fruit7"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/border_image"
+                        android:padding="3dp"
+                        android:onClick="clickButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/fruit7"
+                        android:contentDescription="@string/fruit7" />
+
+                    <ImageView
+                        android:id="@+id/fruit8"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/border_image"
+                        android:padding="3dp"
+                        android:onClick="clickButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/fruit8"
+                        android:contentDescription="@string/fruit8" />
+
+                    <ImageView
+                        android:id="@+id/fruit9"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/border_image"
+                        android:padding="3dp"
+                        android:onClick="clickButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/fruit9"
+                        android:contentDescription="@string/fruit9" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <ImageView
+                        android:id="@+id/goBack"
+                        android:layout_marginTop="30dp"
+                        android:onClick="clickButton"
+                        android:layout_width="192px"
+                        android:layout_height="192px"
+                        android:src="@drawable/back"
+                        android:contentDescription="@string/go_back_button" />
+                </TableRow>
+            </TableLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
