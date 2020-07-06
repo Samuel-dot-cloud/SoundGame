@@ -76,52 +76,52 @@ public class MainActivity extends Activity {
         }else if (view.getId() == R.id.drink3) {
             playSound("blender.mp3", 0);
             if (!((Activity) mContext).isFinishing()) {
-                Toasty.success(mContext, getResources().getString(R.string.drink3), Toast.LENGTH_SHORT, true).show();
+                Toasty.info(mContext, getResources().getString(R.string.drink3), Toast.LENGTH_SHORT, true).show();
             }
 
         }else if (view.getId() == R.id.drink4) {
             playSound("milkshake.mp3", 0);
             if (!((Activity) mContext).isFinishing()) {
-                Toasty.success(mContext, getResources().getString(R.string.drink4), Toast.LENGTH_SHORT, true).show();
+                Toasty.info(mContext, getResources().getString(R.string.drink4), Toast.LENGTH_SHORT, true).show();
             }
         }else if (view.getId() == R.id.drink7) {
             playSound("soda.mp3", 0);
             if (!((Activity) mContext).isFinishing()) {
-                Toasty.success(mContext, getResources().getString(R.string.drink7), Toast.LENGTH_SHORT, true).show();
+                Toasty.info(mContext, getResources().getString(R.string.drink7), Toast.LENGTH_SHORT, true).show();
             }
 
             //Foods section
         }else if (view.getId() == R.id.foods3) {
             playSound("frying.mp3", 0);
             if (!((Activity) mContext).isFinishing()) {
-                Toasty.success(mContext, getResources().getString(R.string.food3), Toast.LENGTH_SHORT, true).show();
+                Toasty.info(mContext, getResources().getString(R.string.food3), Toast.LENGTH_SHORT, true).show();
             }
         }else if (view.getId() == R.id.foods4) {
             playSound("kitchen.mp3", 0);
             if (!((Activity) mContext).isFinishing()) {
-                Toasty.success(mContext, getResources().getString(R.string.food4), Toast.LENGTH_SHORT, true).show();
+                Toasty.info(mContext, getResources().getString(R.string.food4), Toast.LENGTH_SHORT, true).show();
             }
         }else if (view.getId() == R.id.foods7) {
             playSound("eating.mp3", 0);
             if (!((Activity) mContext).isFinishing()) {
-                Toasty.success(mContext, getResources().getString(R.string.food7), Toast.LENGTH_SHORT, true).show();
+                Toasty.info(mContext, getResources().getString(R.string.food7), Toast.LENGTH_SHORT, true).show();
             }
 
             //Fruits section
         }else if (view.getId() == R.id.fruit1) {
             playSound("juice.mp3", 0);
             if (!((Activity) mContext).isFinishing()) {
-                Toasty.success(mContext, getResources().getString(R.string.fruit1), Toast.LENGTH_SHORT, true).show();
+                Toasty.info(mContext, getResources().getString(R.string.fruit1), Toast.LENGTH_SHORT, true).show();
             }
         }else if (view.getId() == R.id.fruit3) {
             playSound("apple.mp3", 0);
             if (!((Activity) mContext).isFinishing()) {
-                Toasty.success(mContext, getResources().getString(R.string.fruit3), Toast.LENGTH_SHORT, true).show();
+                Toasty.info(mContext, getResources().getString(R.string.fruit3), Toast.LENGTH_SHORT, true).show();
             }
         }else if (view.getId() == R.id.fruit8) {
             playSound("nuts.mp3", 0);
             if (!((Activity) mContext).isFinishing()) {
-                Toasty.success(mContext, getResources().getString(R.string.fruit8), Toast.LENGTH_SHORT, true).show();
+                Toasty.info(mContext, getResources().getString(R.string.fruit8), Toast.LENGTH_SHORT, true).show();
             }
         }
 
