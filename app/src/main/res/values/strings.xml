@@ -7,32 +7,32 @@
     <string name="drink1">Peach Juice</string>
     <string name="drink2">Mango Juice</string>
     <string name="drink3">Green Lemon Juice</string>
-    <string name="drink4"></string>
+    <string name="drink4">Raspberry smoothie</string>
     <string name="drink5"></string>
     <string name="drink6"></string>
-    <string name="drink7"></string>
+    <string name="drink7">Soda</string>
     <string name="drink8"></string>
     <string name="drink9"></string>
     <string name="go_back_button">Go back button</string>
 
     <string name="food1"></string>
     <string name="food2"></string>
-    <string name="food3"></string>
-    <string name="food4"></string>
+    <string name="food3">Grilled Lamb chops</string>
+    <string name="food4">Doughnuts</string>
     <string name="food5"></string>
     <string name="food6"></string>
-    <string name="food7"></string>
+    <string name="food7">Hamburger and French fries</string>
     <string name="food8"></string>
     <string name="food9"></string>
 
-    <string name="fruit1"></string>
+    <string name="fruit1">Peach juice with fruit</string>
     <string name="fruit2"></string>
-    <string name="fruit3"></string>
+    <string name="fruit3">Bananas, mangoes and oranges</string>
     <string name="fruit4"></string>
     <string name="fruit5"></string>
     <string name="fruit6"></string>
     <string name="fruit7"></string>
-    <string name="fruit8"></string>
+    <string name="fruit8">Pomegranates</string>
     <string name="fruit9"></string>
 
     <string name="exit">Thank you for visiting.</string>
