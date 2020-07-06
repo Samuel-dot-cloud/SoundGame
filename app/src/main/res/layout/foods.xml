@@ -105,7 +105,7 @@
                         android:onClick="clickButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/drink6"
+                        android:src="@drawable/food6"
                         android:contentDescription="@string/food6" />
                 </TableRow>
 
