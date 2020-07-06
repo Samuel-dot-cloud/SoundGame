@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/AppBackground"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textStyle="bold|italic"
+        android:gravity="center"
+        android:textColor="@color/AppTitleText"
+        android:padding="7dp"
+        android:layout_margin="5dp"
+        android:textSize="36sp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:background="@drawable/border_image"
+        android:padding="7dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:cropToPadding="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/eye"
+        android:contentDescription="@string/app_name" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:id="@+id/drinks"
+                android:layout_margin="5dp"
+                android:layout_width="180dp"
+                android:layout_height="125dp"
+                android:background="@drawable/border_image"
+                android:padding="3dp"
+                android:src="@drawable/drinks1"
+                android:contentDescription="@string/category1" />
+
+            <ImageView
+                android:id="@+id/foods"
+                android:layout_margin="5dp"
+                android:layout_width="180dp"
+                android:layout_height="125dp"
+                android:background="@drawable/border_image"
+                android:padding="3dp"
+                android:src="@drawable/foods1"
+                android:contentDescription="@string/category2" />
+
+            <ImageView
+                android:id="@+id/fruits"
+                android:layout_margin="5dp"
+                android:layout_width="180dp"
+                android:layout_height="125dp"
+                android:background="@drawable/border_image"
+                android:padding="3dp"
+                android:src="@drawable/fruits1"
+                android:contentDescription="@string/category3" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="match_parent" >
+
+            <Button
+                android:id="@+id/drinksBtn"
+                android:layout_margin="5dp"
+                android:padding="5dp"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:textColor="@color/buttonText"
+                android:background="@drawable/button_green"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/category1"
+                android:onClick="clickButton"
+                tools:ignore="ButtonStyle" />
+
+            <Button
+                android:id="@+id/foodsBtn"
+                android:layout_margin="5dp"
+                android:padding="5dp"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:textColor="@color/buttonText"
+                android:background="@drawable/button_red"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/category2"
+                android:onClick="clickButton"
+                tools:ignore="ButtonStyle" />
+
+            <Button
+                android:id="@+id/fruitsBtn"
+                android:layout_margin="5dp"
+                android:padding="5dp"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:textColor="@color/buttonText"
+                android:background="@drawable/button_blue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/category3"
+                android:onClick="clickButton"
+                tools:ignore="ButtonStyle" />
+        </TableRow>
+
+    </TableLayout>
+
+</LinearLayout>
