@@ -45,8 +45,6 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //Activate popup message
-        showPopupWelcomeMessage();
 
         //Activates context
         mContext = MainActivity.this;
@@ -92,6 +90,9 @@ public class MainActivity extends Activity {
 
 
         showMainScreen();
+        //Activate popup message
+        showPopupWelcomeMessage();
+
     }
 
     //Show main page
@@ -266,7 +267,7 @@ public class MainActivity extends Activity {
 
                 case DialogInterface.BUTTON_NEGATIVE:
                     if (!((Activity) mContext).isFinishing()) {
-                        Toast.makeText(mContext, getResources().getString(R.string.popup_message3), Toast.LENGTH_SHORT).show();
+                        Toasty.success(mContext, getResources().getString(R.string.popup_message3), Toast.LENGTH_SHORT).show();
                     }
                     break;
             }
