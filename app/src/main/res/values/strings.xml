@@ -36,4 +36,9 @@
     <string name="fruit9"></string>
 
     <string name="exit">Thank you for visiting.</string>
+
+    <string name="popup_message1">Welcome to my sound game</string>
+    <string name="popup_message2">This sound game is free to use so please support us by sharing it with family and friends.</string>
+    <string name="popup_message3">Thank you</string>
+    <string name="popup_close">Close</string>
 </resources>

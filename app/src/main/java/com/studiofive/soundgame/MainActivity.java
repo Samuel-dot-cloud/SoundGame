@@ -2,15 +2,28 @@ package com.studiofive.soundgame;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.res.AssetFileDescriptor;
+import android.content.res.Configuration;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.media.AudioAttributes;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
+import android.util.DisplayMetrics;
+import android.util.Log;
+import android.util.TypedValue;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.WindowManager;
+import android.widget.Scroller;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
 
 import java.io.IOException;
 
@@ -22,15 +35,62 @@ public class MainActivity extends Activity {
     private MediaPlayer musicFile;
     private AudioManager audio;
 
+    private static boolean popupShow = false;
+    private Integer ScreenHeight, ScreenWidth, ScreenSize = 0;
+    private AlertDialog.Builder PopWelcome;
+    private Activity mActivity;
+    private static final String TAG = "MainActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //Initializes audio sound volume
-        audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+        //Activate popup message
+        showPopupWelcomeMessage();
 
         //Activates context
         mContext = MainActivity.this;
+        mActivity = MainActivity.this;
+
+        //Show once popup welcome message
+        popupShow = true;
+
+       //Check screen pixels size
+        DisplayMetrics displaymetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
+        ScreenHeight = displaymetrics.heightPixels;
+        ScreenWidth = displaymetrics.widthPixels;
+
+       //Check device screen size
+        ScreenSize = 0;
+        int screenSize = getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK;
+        switch(screenSize) {
+            case Configuration.SCREENLAYOUT_SIZE_XLARGE:
+                ScreenSize = 4;
+                Log.d(TAG, "Check Screen Size - XLarge screen");
+                break;
+            case Configuration.SCREENLAYOUT_SIZE_LARGE:
+                ScreenSize = 3;
+                Log.d(TAG, "Check Screen Size - Large screen");
+                break;
+            case Configuration.SCREENLAYOUT_SIZE_NORMAL:
+                ScreenSize = 2;
+                Log.d(TAG, "Check Screen Size - Normal screen");
+                break;
+            case Configuration.SCREENLAYOUT_SIZE_SMALL:
+                ScreenSize = 1;
+                Log.d(TAG, "Check Screen Size - Small screen");
+                break;
+            default:
+                ScreenSize = 2;
+                Log.d(TAG, "Check Screen Size - Screen size is neither large, normal or small");
+        }
+
+
+        //Initializes audio sound volume
+        audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+
+
         showMainScreen();
     }
 
@@ -128,6 +188,91 @@ public class MainActivity extends Activity {
 
     }
 
+    //Show popup welcome message
+    private void showPopupWelcomeMessage(){
+
+        //Case true show popup welcome message
+        if (popupShow) {
+
+            //Show once only
+            popupShow = false;
+
+            //Build message
+            String message;
+            message = getResources().getString(R.string.popup_message1) + "\r\n" +
+                    getResources().getString(R.string.popup_message2) + "\r\n" +
+                    getResources().getString(R.string.popup_message3) + "\r\n";
+
+            //Pop data
+            if (ScreenSize == 3) {
+                PopWelcome = new AlertDialog.Builder(MainActivity.this, R.style.WelcomeDialogThemeLargeScreens);
+            } else {
+                PopWelcome = new AlertDialog.Builder(MainActivity.this, R.style.WelcomeDialogThemeNormalScreens);
+            }
+            PopWelcome.setTitle(getResources().getString(R.string.app_name));
+            PopWelcome.setIcon(R.mipmap.ic_launcher);
+            PopWelcome.setMessage(message);
+            PopWelcome.setPositiveButton("", CloseWelcomePage);
+            PopWelcome.setNegativeButton(getResources().getString(R.string.popup_close), CloseWelcomePage);
+
+            if(!((Activity) mContext).isFinishing()) {
+                final AlertDialog alert = PopWelcome.create();
+                alert.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+                lp.copyFrom(alert.getWindow().getAttributes());
+                lp.width = Math.round((ScreenWidth / 100) * 80);
+                lp.height = Math.round((ScreenHeight / 100) * 80);
+                alert.getWindow().setAttributes(lp);
+                TextView textViewData = (TextView) alert.findViewById(android.R.id.message);
+                if (textViewData != null) {
+                    textViewData.setTextColor(Color.WHITE);
+                    if ((ScreenWidth > 1199) || (ScreenHeight > 1000)) {
+                        textViewData.setTextSize(TypedValue.COMPLEX_UNIT_SP, 22);
+                    } else {
+                        textViewData.setTextSize(TypedValue.COMPLEX_UNIT_SP, 15);
+                    }
+                    textViewData.setScroller(new Scroller(this));
+                    textViewData.setVerticalScrollBarEnabled(true);
+                    textViewData.setMovementMethod(new ScrollingMovementMethod());
+                }
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
+                    alert.getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE, WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE);
+                    alert.getWindow().getDecorView().setSystemUiVisibility(mActivity.getWindow().getDecorView().getSystemUiVisibility());
+                    alert.setOnShowListener(new DialogInterface.OnShowListener() {
+                        @Override
+                        public void onShow(DialogInterface dialog) {
+                            //Clear the not focusable flag from the window
+                            alert.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE);
+
+                            //Update the WindowManager with the new attributes (no nicer way I know of to do this)..
+                            WindowManager wm = (WindowManager) mActivity.getSystemService(Context.WINDOW_SERVICE);
+                            wm.updateViewLayout(alert.getWindow().getDecorView(), alert.getWindow().getAttributes());
+                        }
+                    });
+                }
+                alert.show();
+            }
+        }
+    }
+
+    //When clicking on the popup welcome message
+    private final DialogInterface.OnClickListener CloseWelcomePage = new DialogInterface.OnClickListener() {
+        @Override
+        public void onClick(DialogInterface dialog, int which) {
+
+            switch (which) {
+                case DialogInterface.BUTTON_POSITIVE:
+                    break;
+
+                case DialogInterface.BUTTON_NEGATIVE:
+                    if (!((Activity) mContext).isFinishing()) {
+                        Toast.makeText(mContext, getResources().getString(R.string.popup_message3), Toast.LENGTH_SHORT).show();
+                    }
+                    break;
+            }
+        }
+    };
+
     /*
      Play sounds from assets folder
      looping = 1 loop sound / 0 = do not loop sound
@@ -217,6 +362,10 @@ public class MainActivity extends Activity {
     protected void onDestroy() {
         super.onDestroy();
         releaseSound();
+        //Make sure popup message is reset
+        if (PopWelcome != null) {
+            PopWelcome = null;
+        }
     }
 
 
