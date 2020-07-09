@@ -41,4 +41,9 @@
     <string name="popup_message2">This sound game is free to use so please support us by sharing it with family and friends.</string>
     <string name="popup_message3">Thank you</string>
     <string name="popup_close">Close</string>
+
+    <string name="aboutus">About us</string>
+    <string name="invite">Invite friends</string>
+    <string name="msg_invite1">I want to invite you to download cool sound game.</string>
+    <string name="msg_invite2">Share</string>
 </resources>

@@ -3,6 +3,7 @@ package com.studiofive.soundgame;
 import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.Configuration;
 import android.graphics.Color;
@@ -132,6 +133,10 @@ public class MainActivity extends Activity {
             showFruitsPage();
         }else if (view.getId() == R.id.goBack){
             showMainScreen();
+        }else if (view.getId() == R.id.icon_share){
+            showInviteFriends();
+        }else if (view.getId() == R.id.icon_about){
+            showPopupWelcomeMessage();
 
             //Drinks section
         }else if (view.getId() == R.id.drink3) {
@@ -186,7 +191,22 @@ public class MainActivity extends Activity {
             }
         }
 
+    }
 
+    //Show invite friends message
+    public void showInviteFriends() {
+        //Define the GooglePlay share url
+        String playerShareURL = "https://play.google.com/store/apps/details?id=com.studiofive.soundgame";
+
+        //Open sharing option
+        Intent sharingIntent = new Intent(Intent.ACTION_SEND);
+        sharingIntent.setType("text/plain");
+
+        //What we going to share
+        String shareBody = getResources().getString(R.string.msg_invite1) + "\r\n" + playerShareURL;
+        sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, getResources().getString(R.string.app_name));
+        sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+        startActivity(Intent.createChooser(sharingIntent,getResources().getString(R.string.msg_invite2)));
     }
 
     //Show popup welcome message

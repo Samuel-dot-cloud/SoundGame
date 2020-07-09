@@ -123,4 +123,39 @@
 
     </TableLayout>
 
+    <TableLayout
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="match_parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:id="@+id/icon_about"
+                android:onClick="clickButton"
+                android:padding="3dp"
+                android:layout_margin="15dp"
+                android:background="@drawable/border_image"
+                android:layout_width="192px"
+                android:layout_height="192px"
+                android:contentDescription="@string/aboutus"
+                android:src="@drawable/icon_about" />
+
+            <ImageView
+                android:id="@+id/icon_share"
+                android:onClick="clickButton"
+                android:padding="3dp"
+                android:layout_margin="15dp"
+                android:background="@drawable/border_image"
+                android:layout_width="192px"
+                android:layout_height="192px"
+                android:contentDescription="@string/invite"
+                android:src="@drawable/icon_share" />
+        </TableRow>
+
+    </TableLayout>
+
 </LinearLayout>
