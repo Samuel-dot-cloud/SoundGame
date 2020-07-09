@@ -136,6 +136,7 @@ public class MainActivity extends Activity {
         }else if (view.getId() == R.id.icon_share){
             showInviteFriends();
         }else if (view.getId() == R.id.icon_about){
+            popupShow = true;
             showPopupWelcomeMessage();
 
             //Drinks section
